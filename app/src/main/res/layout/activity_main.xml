@@ -63,7 +63,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/navigationView">
-
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -95,6 +98,7 @@
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="32dp"
                     app:cardBackgroundColor="#FFFFFF"
+                    app:cardElevation="0dp"
                     app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -112,7 +116,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="16dp"
-                            android:text="Lavaderoc Colores"
+                            android:text="Lavadero Colores"
                             android:textColor="#131313"
                             android:textSize="28dp"
                             android:textStyle="bold"
@@ -166,7 +170,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="16dp"
                             android:layout_marginRight="16dp"
-                            android:text="99%"
+                            android:text="94%"
                             android:textColor="#484848"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -195,6 +199,7 @@
                         android:id="@+id/CallToActionRef"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        app:cardElevation="0dp"
                         app:cardBackgroundColor="#FFFFFF">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -291,8 +296,9 @@
                         android:layout_height="190dp"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginRight="4dp"
                         android:layout_weight="1"
+                        app:cardElevation="0dp"
                         app:cardBackgroundColor="#fff">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -343,6 +349,7 @@
                                 android:background="@drawable/btn_infotop"
                                 android:text="CANJEAR PUNTOS"
                                 android:textSize="11dp"
+                                android:onClick="ListadoProductos"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent" />
@@ -355,8 +362,9 @@
                         android:layout_height="190dp"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="4dp"
                         android:layout_weight="1"
+                        app:cardElevation="0dp"
                         app:cardBackgroundColor="#fff">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -398,6 +406,7 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <Button
+                                android:onClick="ListadoProductos"
                                 android:id="@+id/PromosButton"
                                 android:layout_width="match_parent"
                                 android:layout_height="42dp"
@@ -424,10 +433,11 @@
                     android:layout_height="390dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     app:cardBackgroundColor="#fff"
+                    app:cardElevation="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/TopInfo">
@@ -490,7 +500,8 @@
                     android:layout_height="400dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
+                    app:cardElevation="0dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     app:cardBackgroundColor="#FFFFFF"
@@ -627,7 +638,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
-
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

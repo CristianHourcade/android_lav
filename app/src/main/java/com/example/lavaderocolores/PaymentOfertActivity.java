@@ -15,7 +15,10 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 
-public class PaymentActivity extends AppCompatActivity {
+public class PaymentOfertActivity extends AppCompatActivity {
+
+    private String uidPromo;
+    private String puntos;
 
     public final static int WHITE = 0xFFFFFFFF;
     public final static int BLACK = 0xFF000000;
@@ -25,13 +28,17 @@ public class PaymentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment);
+        setContentView(R.layout.activity_payment_ofert);
+
+
+        uidPromo = getIntent().getStringExtra("uid_promo");
+        puntos = getIntent().getStringExtra("puntos");
 
         ImageView imageView = (ImageView) findViewById(R.id.qrCode);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         try {
-            Bitmap bitmap = encodeAsBitmap(user.getUid());
+            Bitmap bitmap = encodeAsBitmap(user.getUid() + "|&|" + uidPromo);
             imageView.setImageBitmap(bitmap);
         } catch (WriterException e) {
             e.printStackTrace();
@@ -66,10 +73,10 @@ public class PaymentActivity extends AppCompatActivity {
 
 
     public void Volver(View v){
-        startActivity(new Intent(this,MainActivity.class));
+        Intent intent = new Intent(this,ListadoOfertasActivity.class);
+        intent.putExtra("puntos",puntos);
+        startActivity(intent);
         overridePendingTransition(R.anim.entrada, R.anim.salida);
         finish();
     }
-
-
 }

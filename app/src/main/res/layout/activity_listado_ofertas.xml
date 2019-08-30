@@ -25,6 +25,7 @@
                 android:id="@+id/imageView3"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:onClick="goBack"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="8dp"
@@ -52,8 +53,9 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ofertaList"
         android:layout_width="match_parent"
-        android:layout_height="650dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

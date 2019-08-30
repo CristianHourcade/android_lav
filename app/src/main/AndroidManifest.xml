@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".ListadoOfertasActivity"></activity>
+        <activity android:name=".PaymentOfertActivity"></activity>
+        <activity android:name=".ListadoOfertasActivity" />
         <activity android:name=".ReferidosCompartirActivity" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".Onboarding">

@@ -3,6 +3,7 @@ package com.example.lavaderocolores;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     TextView puntos;
     TextView cantOfertas;
 
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     int[] PromoImages = {R.drawable.img_1, R.drawable.img_2, R.drawable.f1};
 
@@ -60,9 +62,15 @@ public class MainActivity extends AppCompatActivity {
         carouselView = (CarouselView) findViewById(R.id.carouselView);
         puntos = findViewById(R.id.PuntosText);
         cantOfertas = findViewById(R.id.PromosText);
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayout);
 
         searchDateOf();
-
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                searchDateOf();
+            }
+        });
     }
 
     @Override
@@ -80,7 +88,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void ListadoProductos(View view){
-    //    startActivity(new Intent(this, LaBirraBarListadoActivity.class));
+        Intent intent = new Intent(this, ListadoOfertasActivity.class);
+        intent.putExtra("puntos",puntos.getText());
+        startActivity(intent);
         overridePendingTransition(R.anim.go_entrada, R.anim.go_salida);
 
     }
@@ -136,6 +146,10 @@ public class MainActivity extends AppCompatActivity {
                                 puntos.setText(aux+ " Puntos");
 
                             }
+                            if(swipeRefreshLayout.isRefreshing()){
+                                swipeRefreshLayout.setRefreshing(false);
+                            }
+
                         } else {
                             Log.d("x", "Error getting documents: ", task.getException());
                         }
