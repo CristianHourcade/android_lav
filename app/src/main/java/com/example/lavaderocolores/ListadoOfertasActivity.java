@@ -39,6 +39,9 @@ public class ListadoOfertasActivity extends AppCompatActivity {
 
         puntosCurrentUser = getIntent().getStringExtra("puntos");
 
+        TextView puntosShow = (TextView) findViewById(R.id.CuantosPuntosListadoOferta);
+        puntosShow.setText("Tenes " + puntosCurrentUser);
+
         final ArrayList<Ofertas> list = new ArrayList<Ofertas>();
         final FirebaseFirestore db = FirebaseFirestore.getInstance();
         final RecyclerView recyclerView = findViewById(R.id.ofertaList);
