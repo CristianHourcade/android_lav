@@ -8,15 +8,19 @@ public class Ofertas {
     private String mPorcentajeDescuento;
     private String uidPromo;
     private String puntosCurrentUs;
+    private String mProductoSeleccionado;
 
-    public Ofertas(String Titulo,  String Body, String puntos, String PorcentajePuntos, String id, String puntosCurrentUser){
+    public Ofertas(String Titulo,  String Body, String puntos, String PorcentajePuntos, String id, String puntosCurrentUser, String producto){
         mTitulo = Titulo;
         mBody = Body;
         mPuntosCoste = puntos;
         mPorcentajeDescuento = PorcentajePuntos;
         uidPromo = id;
         puntosCurrentUs = puntosCurrentUser;
+        mProductoSeleccionado = producto;
     }
+
+    public String getProducto() { return mProductoSeleccionado; }
 
     public String getPuntosCurrentUs() { return puntosCurrentUs; }
 

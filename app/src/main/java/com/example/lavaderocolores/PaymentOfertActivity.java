@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,6 +20,8 @@ public class PaymentOfertActivity extends AppCompatActivity {
 
     private String uidPromo;
     private String puntos;
+    private String producto;
+    private String porcentaje;
 
     public final static int WHITE = 0xFFFFFFFF;
     public final static int BLACK = 0xFF000000;
@@ -33,6 +36,12 @@ public class PaymentOfertActivity extends AppCompatActivity {
 
         uidPromo = getIntent().getStringExtra("uid_promo");
         puntos = getIntent().getStringExtra("puntos");
+        producto = getIntent().getStringExtra("producto");
+        porcentaje = getIntent().getStringExtra("porcentaje");
+
+        TextView DatosOferta = findViewById(R.id.prod_des);
+        DatosOferta.setText("Esta promoción es valida para el producto "+ producto +" con un "+ porcentaje +" de descuento.");
+
 
         ImageView imageView = (ImageView) findViewById(R.id.qrCode);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

@@ -28,10 +28,10 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/btn_infotop"
+                android:onClick="goPayment"
                 android:paddingRight="30dp"
                 android:text="Pagar"
-                android:onClick="goPayment"
-                android:textColor="#000000"
+                android:textColor="#fff"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -81,15 +81,17 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/CardEnvios"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="32dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
+                    android:padding="8dp"
                     android:visibility="visible"
-                    app:cardElevation="0dp"
                     app:cardBackgroundColor="#fff"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/promociones">
@@ -102,7 +104,9 @@
                             android:id="@+id/imageView6"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:layout_marginTop="8dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="8dp"
+                            app:layout_constraintBottom_toTopOf="@+id/textView5"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -112,14 +116,14 @@
                             android:id="@+id/textView5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="¡Este local tiene envio!"
+                            android:layout_marginBottom="8dp"
+                            android:text="¡Tenemos envio!"
                             android:textColor="#222222"
                             android:textSize="18dp"
                             android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/textView6"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+                            app:layout_constraintStart_toStartOf="parent" />
 
                         <TextView
                             android:id="@+id/textView6"
@@ -127,33 +131,43 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
                             android:layout_marginLeft="16dp"
-                            android:layout_marginTop="8dp"
                             android:layout_marginEnd="16dp"
                             android:layout_marginRight="16dp"
-                            android:text="Este local realiza envios de 11:00 HS a 18:00 HS, solo a 2KM de su ubicación."
+                            android:layout_marginBottom="16dp"
+                            android:text="Realizamos envios de 11:00 HS a 18:00 HS, solo a 2KM de nuestra ubicación."
                             android:textAlignment="center"
                             android:textColor="#535353"
                             android:textSize="14dp"
+                            app:layout_constraintBottom_toTopOf="@+id/button7"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                            app:layout_constraintStart_toStartOf="parent" />
 
                         <Button
                             android:id="@+id/button7"
-                            android:layout_width="match_parent"
-                            android:layout_height="42dp"
-                            android:layout_marginStart="32dp"
-                            android:layout_marginLeft="32dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="32dp"
-                            android:layout_marginRight="32dp"
-                            android:layout_marginBottom="8dp"
-                            android:background="@drawable/btn_infotop"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/btn_secondary"
                             android:text="Hacer pedido"
+                            android:paddingLeft="15dp"
+                            android:textColor="#2196F3"
+                            android:textSize="11dp"
+                            android:gravity="left|center_vertical"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                             />
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="20dp"
+                            android:rotation="180"
+                            android:layout_height="20dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/button7"
+                            app:layout_constraintEnd_toEndOf="@+id/button7"
+                            app:layout_constraintTop_toTopOf="@+id/button7"
+                            app:srcCompat="@drawable/baseline_keyboard_arrow_left_black_48" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -161,14 +175,15 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/CardContacto"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="32dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     app:cardBackgroundColor="#FFFFFF"
-                    app:cardElevation="0dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -176,7 +191,7 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="356dp">
+                        android:layout_height="wrap_content">
 
                         <ImageView
                             android:id="@+id/imageView7"
@@ -187,6 +202,8 @@
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="8dp"
                             android:layout_marginRight="8dp"
+                            android:layout_marginBottom="8dp"
+                            app:layout_constraintBottom_toTopOf="@+id/textView3"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -198,66 +215,30 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginLeft="8dp"
-                            android:layout_marginTop="8dp"
                             android:layout_marginEnd="8dp"
                             android:layout_marginRight="8dp"
-                            android:text="Contacto"
+                            android:layout_marginBottom="16dp"
+                            android:text="¡Contactanos!"
                             android:textAlignment="center"
                             android:textColor="#000000"
-                            android:textSize="24dp"
+                            android:textSize="22dp"
+                            app:layout_constraintBottom_toTopOf="@+id/button6"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.498"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+                            app:layout_constraintStart_toStartOf="parent" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:layout_weight="6"
-                            android:orientation="vertical"
+                        <Button
+                            android:id="@+id/button6"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/btn_whatsapp"
+                            android:onClick="whatsapp"
+                            android:text="Mandanos WhatsApp"
+                            android:textSize="11dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView3"
-                            app:layout_constraintVertical_bias="0.060000002">
+                            app:layout_constraintStart_toStartOf="parent" />
 
-                            <Button
-                                android:id="@+id/button6"
-                                android:layout_width="match_parent"
-                                android:layout_height="42dp"
-                                android:layout_margin="10dp"
-                                android:background="@drawable/btn_whatsapp"
-                                android:text="Enviar Whatsapp"
-                                android:textSize="18dp" />
-
-                            <Button
-                                android:id="@+id/button5"
-                                android:layout_width="match_parent"
-                                android:layout_height="42dp"
-                                android:layout_margin="10dp"
-
-                                android:background="@drawable/btn_infotop"
-                                android:text="+54 1163562537"
-                                android:textSize="18dp" />
-
-                            <Button
-                                android:id="@+id/button3"
-                                android:layout_width="match_parent"
-                                android:layout_height="42dp"
-                                android:layout_margin="10dp"
-
-                                android:background="@drawable/btn_info_outline"
-                                android:text="49230544"
-                                android:textColor="#30DFFC"
-                                android:textSize="18dp" />
-
-                        </LinearLayout>
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -267,14 +248,15 @@
                     android:layout_height="390dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     app:cardBackgroundColor="#fff"
-                    app:cardElevation="0dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/TopInfo">
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -285,6 +267,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="292dp"
                             android:layout_marginTop="60dp"
+                            android:background="@drawable/border_carrousel"
+                            android:paddingTop="10dp"
                             app:fillColor="#FFFFFFFF"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -305,17 +289,17 @@
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginBottom="8dp"
-                            android:text="Productos"
+                            android:text="Productos Destacados"
                             android:textColor="#000"
-                            android:textSize="28dp"
+                            android:textSize="22dp"
                             app:layout_constraintBottom_toTopOf="@+id/carouselView"
                             app:layout_constraintStart_toEndOf="@+id/imageView4"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginLeft="16dp"
                             android:layout_marginTop="8dp"
@@ -331,19 +315,13 @@
                 <LinearLayout
                     android:id="@+id/TopInfo"
                     android:layout_width="match_parent"
-                    android:layout_height="190dp"
-
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="52dp"
                     android:layout_weight="1"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+                    app:layout_constraintTop_toBottomOf="@+id/view">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/CajaPuntos"
@@ -351,10 +329,14 @@
                         android:layout_height="190dp"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="4dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="16dp"
                         android:layout_weight="1"
                         app:cardBackgroundColor="#fff"
-                        app:cardElevation="0dp">
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="8dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -400,7 +382,7 @@
                                 android:layout_marginLeft="8dp"
                                 android:layout_marginEnd="8dp"
                                 android:layout_marginRight="8dp"
-                                android:layout_marginBottom="16dp"
+                                android:layout_marginBottom="8dp"
                                 android:background="@drawable/btn_infotop"
                                 android:onClick="ListadoProductos"
                                 android:text="CANJEAR PUNTOS"
@@ -417,10 +399,14 @@
                         android:layout_height="190dp"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="4dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="16dp"
                         android:layout_weight="1"
                         app:cardBackgroundColor="#fff"
-                        app:cardElevation="0dp">
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="8dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -468,7 +454,7 @@
                                 android:layout_marginLeft="8dp"
                                 android:layout_marginEnd="8dp"
                                 android:layout_marginRight="8dp"
-                                android:layout_marginBottom="16dp"
+                                android:layout_marginBottom="8dp"
                                 android:background="@drawable/btn_infotop"
                                 android:onClick="ListadoProductos"
                                 android:text="ver promos"
@@ -485,24 +471,24 @@
                 <LinearLayout
                     android:id="@+id/linearLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="64dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_height="0dp"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view">
+                    app:layout_constraintTop_toBottomOf="@+id/TopInfo">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/CallToActionRef"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:padding="8dp"
                         app:cardBackgroundColor="#FFFFFF"
-                        app:cardElevation="0dp">
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="8dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -510,15 +496,17 @@
 
                             <ImageView
                                 android:id="@+id/imageView"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginLeft="8dp"
+                                android:layout_marginTop="16dp"
                                 android:layout_marginEnd="8dp"
                                 android:layout_marginRight="8dp"
                                 app:layout_constraintBottom_toTopOf="@+id/textView7"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
                                 app:srcCompat="@drawable/friendship" />
 
                             <TextView
@@ -527,6 +515,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginLeft="8dp"
+                                android:layout_marginTop="8dp"
                                 android:layout_marginEnd="8dp"
                                 android:layout_marginRight="8dp"
                                 android:layout_marginBottom="40dp"
@@ -536,7 +525,8 @@
                                 app:layout_constraintBottom_toTopOf="@+id/button9"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.496"
-                                app:layout_constraintStart_toStartOf="parent" />
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
                             <Button
                                 android:id="@+id/button9"
@@ -546,11 +536,11 @@
                                 android:layout_marginLeft="8dp"
                                 android:layout_marginEnd="8dp"
                                 android:layout_marginRight="8dp"
-                                android:layout_marginBottom="16dp"
+                                android:layout_marginBottom="8dp"
                                 android:background="@drawable/btn_infotop"
                                 android:onClick="MostrarReferidos"
                                 android:text="Invitar a un amigo"
-                                android:textSize="16dp"
+                                android:textSize="11dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.0"
@@ -583,10 +573,11 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
-                    android:layout_marginBottom="32dp"
+                    android:layout_marginBottom="16dp"
                     app:cardBackgroundColor="#FFFFFF"
-                    app:cardElevation="5dp"
-                    app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="6dp"
+                    app:layout_constraintBottom_toTopOf="@+id/TopInfo"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent">
@@ -605,7 +596,7 @@
                             android:layout_marginTop="16dp"
                             android:text="Lavadero Colores"
                             android:textColor="#131313"
-                            android:textSize="28dp"
+                            android:textSize="22dp"
                             android:textStyle="bold"
                             app:layout_constraintStart_toEndOf="@+id/imageView8"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -635,34 +626,19 @@
                             android:textColor="#525252"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/imageView8"
-                            app:layout_constraintTop_toBottomOf="@+id/textView9"
-                            app:layout_constraintVertical_bias="0.0" />
+                            app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
-                        <ImageView
-                            android:id="@+id/imageView9"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="16dp"
-                            android:layout_marginRight="16dp"
+                        <ImageButton
+                            android:id="@+id/imageButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:background="#03A9F4"
+                            android:padding="15dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.28"
-                            app:srcCompat="@drawable/support" />
+                            app:srcCompat="@android:drawable/ic_menu_share" />
 
-                        <TextView
-                            android:id="@+id/textView11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="16dp"
-                            android:layout_marginRight="16dp"
-                            android:text="94%"
-                            android:textColor="#484848"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/imageView9"
-                            app:layout_constraintVertical_bias="0.272" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -671,7 +647,7 @@
                     android:id="@+id/view"
                     android:layout_width="match_parent"
                     android:layout_height="280dp"
-                    android:background="@drawable/bg_lavadero"
+                    android:background="@drawable/lavadero"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -680,13 +656,8 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/Logout"
                     android:layout_width="match_parent"
-                    android:layout_height="129dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="32dp"
                     app:cardBackgroundColor="#fff"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -700,17 +671,11 @@
                         <Button
                             android:id="@+id/button4"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginBottom="8dp"
+                            android:layout_height="0dp"
                             android:background="@drawable/btn_cerrarsesion"
                             android:onClick="Logout"
                             android:text="Cerrar sesion"
-                            android:textColor="#F44336"
+                            android:textColor="#FFF"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"

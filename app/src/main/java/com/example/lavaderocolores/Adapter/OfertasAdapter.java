@@ -58,10 +58,6 @@ public void onBindViewHolder(OfertasAdapter.ViewHolder viewHolder, int position)
             puntosCoste = "¡Canjear Cupon Gratis!";
         }else{
 
-            Log.e("hola",""+ofertas.getPuntosCurrentUs());
-            Log.e("sxsxs:",""+ofertas.getmPuntosCoste());
-
-
             if(Integer.parseInt(ofertas.getPuntosCurrentUs()) > Integer.parseInt(ofertas.getmPuntosCoste())){
                 puntosCoste = "Canjear " + ofertas.getmPuntosCoste() + " Puntos";
             }else{
@@ -77,6 +73,13 @@ public void onBindViewHolder(OfertasAdapter.ViewHolder viewHolder, int position)
 
         TextView uidLabel = viewHolder.UidPromo;
         uidLabel.setText(ofertas.getUidPromo());
+
+        TextView mProduct = viewHolder.mProduct;
+        mProduct.setText(ofertas.getProducto());
+
+        TextView mPorc = viewHolder.mPorcentaje;
+        mPorc.setText(ofertas.getmPorcentajeDescuento());
+
         }
 
 // Returns the total count of items in the list
@@ -93,6 +96,8 @@ public class ViewHolder extends RecyclerView.ViewHolder {
     public Button Points;
     public TextView UidPromo;
     public ImageView btnGo;
+    public TextView mProduct;
+    public TextView mPorcentaje;
     // We also create a constructor that accepts the entire item row
     // and does the view lookups to find each subview
     public ViewHolder(View itemView) {
@@ -105,6 +110,9 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         Body = (TextView) itemView.findViewById(R.id.bodyOferta);
         Points = (Button) itemView.findViewById(R.id.puntosOfertaNumero);
         UidPromo = (TextView) itemView.findViewById(R.id.uidCard);
+        mProduct = (TextView) itemView.findViewById(R.id.Producto_seleccionado);
+        mPorcentaje = itemView.findViewById(R.id.porc);
+
     }
 }
 
